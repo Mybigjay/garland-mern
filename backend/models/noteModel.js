@@ -14,6 +14,11 @@ const noteSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    status: {
+      type: String,
+      default: "public",
+      enum: ["public", "private"],
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,

@@ -35,7 +35,7 @@ const CreateNote = asyncHandler(async (req, res) => {
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const note = new Note({ user: req.user._id, title, content, category });
+    const note = new Note({ user: req, title, content, category });
 
     const createdNote = await note.save();
 
